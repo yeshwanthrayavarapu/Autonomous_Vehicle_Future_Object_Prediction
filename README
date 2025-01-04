@@ -1,0 +1,40 @@
+Before running the script, please download the following folders :
+1. IMPORTS.zip - contains the modified Mask_RCNN, coco, mrcnn_coco weights file (Too large to submit on Moodle)
+    Extract the contents and place the Mask_RCNN, coco folders and the weights file in the project director
+2. Dataset.zip - Extract the dataset folder and place it in the project directory
+To run the code, first you need to run the following commands:
+1.$ cd project9417/
+2.$ pip install -r requirements.txt
+3.$ cd coco/PythonAPI
+4.$ pip install Cython
+4.$ python setup.py build_ext install
+5.$ rm -rf build
+6.$ cd ../..
+7.$ python main.py
+
+Our project consists of the following files and folders:
+DOWNLOAD MRCNN AND COCO AND PRETRAINED WEIGHTS FILE FROM :https://unsw-my.sharepoint.com/:u:/g/personal/z5390267_ad_unsw_edu_au/Ee4lDJJRYJ9JhKm-jEvBNLUBm7qFHOsUV3rOO5RyGh_pJQ?e=pj3m13
+
+1. Mask_RCNN - a folder containing the updated model.py file in the mcrnn module(updated accordingly to the latest tensorflow version, make sure the model runs from this file)
+   (Ref: https://github.com/matterport/Mask_RCNN)
+2. COCO - used to install the pycocotools package
+   (Ref: https://github.com/cocodataset/cocoapi)
+3. file_selection.py - selects files from the dataset_dir  since it is huge
+4. instance_segmentation.py - generates instance masks on the images given by file_selection.py
+5. tracking.py - assigns track_ids to all the instances generated
+   (Ref: https://github.com/NickNair/Multiple-Object-Tracking-using-Kalman-Filter, modified the code to  our needs)
+6. feature_extraction.py - extracts features from the results of instance_segmentation.py and tracking.py
+7. regression.py - contains all the general regression models we tried on the results from feature_extraction.py
+8. dataset - empty folder, download contents of the Dataset folder into this from the link below. Contains sample of the Semantic 3D boxes(.npz files)  and bus data of the A2D2 dataset(https://www.a2d2.audi/a2d2/en.html)
+
+The link to sample of dataset used is :https://unsw-my.sharepoint.com/:u:/g/personal/z5390267_ad_unsw_edu_au/EcZnoAFgLOJOu4C4zd1dyGgBcXKgct4oV6LdATzawcngMw?e=basOu2
+
+
+
+
+
+
+
+
+
+
